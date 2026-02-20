@@ -1,23 +1,23 @@
 const { Router } = require('express');
 const router = Router();
 
-router.get('/users', (req, res) => {
+router.get('/', (req, res) => {
     res.send('Get all users');
 });
 
-router.get('/users/:id', (req, res) => {
+router.get('/:id', (req, res) => {
     res.send('Get user by id');
 });
 
-router.post('/users', (req, res) => {
+router.post('/', (req, res) => {
     res.send('Create a new user');
 });
 
-router.put('/users/:id', (req, res) => {
+router.put('/:id', (req, res) => {
     res.send('Update a user');
 });
 
-router.delete('/users/:id', (req, res) => {
+router.delete('/:id', (req, res) => {
     res.send('Delete a user');
 });
 
