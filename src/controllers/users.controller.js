@@ -50,3 +50,16 @@ const updateUser = (req, res) => {
 
     res.json(user);
 };
+
+// Delete user
+const deleteUser = (req, res) => {
+    const id = parseInt(req.params.id);
+    const index = users.findIndex(user => user.id === id);
+
+    if (index === -1) {
+        return res.status(404).json({ message: 'User not found' });
+    }
+
+    const deletedUser = users.splice(index, 1);
+    res.json(deletedUser[0]);
+};
