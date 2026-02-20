@@ -6,7 +6,7 @@ app.use(express.json());
 const usersRoutes = require('./routes/users.routes');
 app.use('/users', usersRoutes);
 
-const errorHandler = require('./middleware/error.middleware');
+const errorHandler = require('./middlewares/error.middleware');
 app.use(errorHandler);
 
 app.listen(3000, () => {
