@@ -63,3 +63,11 @@ const deleteUser = (req, res) => {
     const deletedUser = users.splice(index, 1);
     res.json(deletedUser[0]);
 };
+
+module.exports = {
+    getAllUsers,
+    getUserById,
+    createUser,
+    updateUser,
+    deleteUser
+};
