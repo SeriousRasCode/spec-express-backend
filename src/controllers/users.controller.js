@@ -32,6 +32,21 @@ const createUser = (req, res) => {
     };
 
     users.push(newUser);
-
     res.status(201).json(newUser);
+};
+
+// Update user
+const updateUser = (req, res) => {
+    const id = parseInt(req.params.id);
+    const { name, email } = req.body;
+    const user = users.find(user => user.id === id);
+
+    if (!user) {
+        return res.status(404).json({ message: 'User not found' });
+    }
+
+    if (name) user.name = name;
+    if (email) user.email = email;
+
+    res.json(user);
 };
